@@ -42,6 +42,7 @@
     "@mui/material": "^6.1.10",
     "@mui/material-nextjs": "^6.1.9",
     "@mui/x-date-pickers": "^7.23.1",
+    "@sentry/nextjs": "^8.47.0",
     "@vis.gl/react-google-maps": "^1.4.2",
     "dayjs": "^1.11.13",
     "embla-carousel": "^8.5.1",
