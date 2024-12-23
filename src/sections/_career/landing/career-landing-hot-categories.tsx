@@ -8,6 +8,7 @@ import Container from '@mui/material/Container';
 import Typography from '@mui/material/Typography';
 
 import { SvgColor } from 'src/components/svg-color';
+import { bgGradient } from 'src/theme';
 
 // ----------------------------------------------------------------------
 
@@ -22,12 +23,12 @@ export function CareerLandingHotCategories({ categories, sx, ...other }: Props) 
       sx={[{ pt: { xs: 10, md: 15 }, pb: { xs: 5, md: 10 } }, ...(Array.isArray(sx) ? sx : [sx])]}
       {...other}
     >
-      <Container>
-        <Typography variant="h2" sx={{ textAlign: 'center' }}>
-          Serviços Prestados
-        </Typography>
-
+      <h1 className="border-slate-700 mt-5 p-10 flex-auto  text-5xl font-extrabold text-center text-cyan-400 rounded-xl h-50 shadow-2xl bg-slate-600">
+        SERVIÇOS PRESTADOS
+      </h1>
+      <Container className="bg-slate-100 rounded-2xl p-1 mb-2 border-solid">
         <Box
+          className="mb-3"
           sx={{
             display: 'grid',
             gap: { xs: 3, md: 5 },
@@ -68,23 +69,24 @@ type CategoryItemProps = {
 function CategoryItem({ category }: CategoryItemProps) {
   return (
     <Paper
+      className="mb-3 outline-dotted outline-zinc-400 cursor-pointer border-solid hover:bg-zinc-50"
       variant="outlined"
       sx={(theme) => ({
         p: 0,
         minWidth: 1,
-        borderRadius: 2,
-        display: 'flex',
-        cursor: 'pointer',
-        aspectRatio: '1/1',
         textAlign: 'center',
         position: 'relative',
+        aspectRatio: '1/1',
+        borderRadius: 2,
+        display: 'flex',
         alignItems: 'center',
         bgcolor: 'transparent',
-        flexDirection: 'column',
         justifyContent: 'center',
+        flexDirection: 'column',
+        boxShadow: theme.vars.customShadows.card,
         transition: theme.transitions.create(['all']),
         '&:hover': {
-          bgcolor: 'background.paper',
+          // bgcolor: 'background.paper',
           boxShadow: theme.vars.customShadows.z24,
           '& .icon': {
             color: 'common.white',
@@ -93,6 +95,30 @@ function CategoryItem({ category }: CategoryItemProps) {
           },
         },
       })}
+      // sx={(theme) => ({
+      //   p: 0,
+      //   minWidth: 1,
+      //   borderRadius: 2,
+      //   display: 'flex',
+      //   cursor: 'pointer',
+      //   aspectRatio: '1/1',
+      //   textAlign: 'center',
+      //   position: 'relative',
+      //   alignItems: 'center',
+      //   bgcolor: 'transparent',
+      //   flexDirection: 'column',
+      //   justifyContent: 'center',
+      //   transition: theme.transitions.create(['all']),
+      //   '&:hover': {
+      //     bgcolor: 'background.paper',
+      //     boxShadow: theme.vars.customShadows.z24,
+      // '& .icon': {
+      //   color: 'common.white',
+      //   // bgcolor: 'info.main',
+      //   transition: theme.transitions.create(['all']),
+      // },
+      //   },
+      // })}
     >
       <Box
         className="icon"

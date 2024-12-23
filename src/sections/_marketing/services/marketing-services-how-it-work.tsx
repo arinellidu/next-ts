@@ -62,7 +62,11 @@ export function MarketingServicesHowItWork({ sx, ...other }: BoxProps) {
         paddingBottom={'-80px'}
         fontSize={'182px'}
         fontWeight={'900'}
-        sx={{ textAlign: 'center', mixBlendMode: 'soft-light', color: 'InfoBackground' }}
+        sx={{
+          textAlign: 'center',
+          mixBlendMode: 'soft-light',
+          color: 'InfoBackground',
+        }}
       >
         FRADEMA
       </Typography>
