@@ -43,6 +43,8 @@
     "@mui/material-nextjs": "^6.1.9",
     "@mui/x-date-pickers": "^7.23.1",
     "@sentry/nextjs": "^8.47.0",
+    "@supabase/ssr": "^0.5.2",
+    "@supabase/supabase-js": "^2.47.10",
     "@typebot.io/js": "^0.3.4",
     "@typebot.io/nextjs": "^0.3.4",
     "@vercel/speed-insights": "^1.1.0",
