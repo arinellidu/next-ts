@@ -22,18 +22,18 @@ import { Form, Field } from 'src/components/hook-form';
 export type MarketingContactSchemaType = zod.infer<typeof MarketingContactSchema>;
 
 export const MarketingContactSchema = zod.object({
-  services: zod.string().array().min(2, { message: 'Must have at least 2 items!' }),
+  serviços: zod.string().array().min(2, { message: 'Must have at least 2 items!' }),
   email: zod
     .string()
     .min(5, { message: 'Digite seu Email' })
     .email({ message: 'Email precisa ser válido!' }),
-  compnany: zod.string(),
+  empresa: zod.string(),
   website: zod.string(),
-  message: zod.string().min(5, { message: 'Deixe aqui sua mensagem' }),
+  mensagem: zod.string().min(5, { message: 'Deixe aqui sua mensagem' }),
   // Not required
-  firstName: zod.string().min(2, { message: 'Primeiro nome é requerido!' }),
-  lastName: zod.string().min(2, { message: 'Sobrenome nome é requerido!' }),
-  phoneNumber: zod.string().min(13, { message: 'Número de celular não compatível' }),
+  nome: zod.string().min(2, { message: 'Primeiro nome é requerido!' }),
+  sobrenome: zod.string().min(2, { message: 'Sobrenome nome é requerido!' }),
+  cel: zod.string().min(13, { message: 'Número de celular não compatível' }),
 });
 
 // ----------------------------------------------------------------------
@@ -42,12 +42,12 @@ export function MarketingContactForm({ sx, ...other }: BoxProps) {
   const defaultValues: MarketingContactSchemaType = {
     email: '',
     website: '',
-    message: '',
-    services: [],
-    compnany: '',
-    lastName: '',
-    firstName: '',
-    phoneNumber: '',
+    mensagem: '',
+    serviços: [],
+    empresa: '',
+    sobrenome: '',
+    nome: '',
+    cel: '',
   };
 
   const methods = useForm<MarketingContactSchemaType>({
@@ -83,12 +83,12 @@ export function MarketingContactForm({ sx, ...other }: BoxProps) {
   const renderServiceOptions = () => (
     <div>
       <Box sx={{ gap: 1, display: 'flex', flexWrap: 'wrap' }}>
-        {_tags.slice(0, 5).map((service) => (
+        {_tags.slice(0, 5).map((serviço) => (
           <ButtonBase
             disableRipple
-            key={service}
+            key={serviço}
             onClick={() =>
-              setValue('services', getSelected(values.services, service), {
+              setValue('serviços', getSelected(values.serviços, serviço), {
                 shouldValidate: true,
               })
             }
@@ -99,20 +99,20 @@ export function MarketingContactForm({ sx, ...other }: BoxProps) {
               typography: 'body2',
               color: 'text.secondary',
               border: `solid 1px ${varAlpha(theme.vars.palette.grey['500Channel'], 0.2)}`,
-              ...(values.services.includes(service) && {
+              ...(values.serviços.includes(serviço) && {
                 bgcolor: 'text.primary',
                 color: 'background.paper',
               }),
             })}
           >
-            {service}
+            {serviço}
           </ButtonBase>
         ))}
       </Box>
 
-      {!!errors.services && (
+      {!!errors.serviços && (
         <FormHelperText error sx={{ px: 2 }}>
-          {errors.services.message}
+          {errors.serviços.message}
         </FormHelperText>
       )}
     </div>
@@ -127,8 +127,8 @@ export function MarketingContactForm({ sx, ...other }: BoxProps) {
         flexDirection: { xs: 'column', md: 'row' },
       }}
     >
-      <Field.Text name="firstName" label="First name" />
-      <Field.Text name="lastName" label="Last name" />
+      <Field.Text name="nome" label="Nome" />
+      <Field.Text name="sobrenome" label="Sobrenome" />
     </Box>
   );
 
@@ -141,26 +141,26 @@ export function MarketingContactForm({ sx, ...other }: BoxProps) {
         flexDirection: { xs: 'column', md: 'row' },
       }}
     >
-      <Field.Text name="compnany" label="Compnany" />
+      <Field.Text name="empresa" label="Empresa" />
       <Field.Text name="website" label="Website" />
     </Box>
   );
 
-  const renderBudget = () => (
-    <Box sx={{ py: 2, width: 1 }}>
-      <Typography variant="overline" sx={{ color: 'text.disabled' }}>
-        Your Budget
-      </Typography>
-      <Field.Slider
-        name="budget"
-        valueLabelDisplay="on"
-        max={20000}
-        step={1000}
-        valueLabelFormat={(value) => fCurrency(value)}
-        sx={{ mt: 5 }}
-      />
-    </Box>
-  );
+  // const renderBudget = () => (
+  //   <Box sx={{ py: 2, width: 1 }}>
+  //     <Typography variant="overline" sx={{ color: 'text.disabled' }}>
+  //       Your Budget
+  //     </Typography>
+  //     <Field.Slider
+  //       name="budget"
+  //       valueLabelDisplay="on"
+  //       max={20000}
+  //       step={1000}
+  //       valueLabelFormat={(value) => fCurrency(value)}
+  //       sx={{ mt: 5 }}
+  //     />
+  //   </Box>
+  // );
 
   return (
     <Box sx={sx} {...other}>
@@ -176,10 +176,10 @@ export function MarketingContactForm({ sx, ...other }: BoxProps) {
           {renderServiceOptions()}
           {renderName()}
           <Field.Text name="email" label="Email" />
-          <Field.Text name="phoneNumber" label="Phone number" />
+          <Field.Text name="cel" label="Tel com (DDD)" />
           {renderCompnany()}
-          {renderBudget()}
-          <Field.Text name="message" label="Message" multiline rows={4} />
+          {/* {renderBudget()} */}
+          <Field.Text name="mensagem" label="Mensagem" multiline rows={4} />
         </Box>
 
         <LoadingButton
@@ -190,7 +190,7 @@ export function MarketingContactForm({ sx, ...other }: BoxProps) {
           loading={isSubmitting}
           sx={{ mt: 3 }}
         >
-          Send request
+          Enviar
         </LoadingButton>
       </Form>
     </Box>
