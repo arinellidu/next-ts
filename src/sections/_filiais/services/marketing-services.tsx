@@ -74,7 +74,7 @@ export function MarketingServices({ sx, ...other }: BoxProps) {
 
             <Button
               component={RouterLink}
-              href={paths.marketing.caseStudies}
+              href={paths.filiais.caseStudies}
               size="large"
               color="inherit"
               variant="outlined"

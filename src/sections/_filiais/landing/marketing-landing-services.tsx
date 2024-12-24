@@ -28,25 +28,25 @@ const SERVICES = [
     name: 'SEO',
     icon: iconPath('ic-seo.svg'),
     content: 'Nunc nonummy metus. Donec elit libero',
-    path: paths.marketing.services,
+    path: paths.filiais.services,
   },
   {
     name: 'Email marketing',
     icon: iconPath('ic-marketing-mail.svg'),
     content: 'Nunc nonummy metus. Donec elit libero',
-    path: paths.marketing.services,
+    path: paths.filiais.services,
   },
   {
     name: 'Search engine oprimization',
     icon: iconPath('ic-search-oprimization.svg'),
     content: 'Nunc nonummy metus. Donec elit libero',
-    path: paths.marketing.services,
+    path: paths.filiais.services,
   },
   {
     name: 'Social marketing',
     icon: iconPath('ic-marketing-bullhorn.svg'),
     content: 'Nunc nonummy metus. Donec elit libero',
-    path: paths.marketing.services,
+    path: paths.filiais.services,
   },
 ];
 

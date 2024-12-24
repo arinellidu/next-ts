@@ -121,7 +121,7 @@ export function PostItem({ post }: PostItemProps) {
 
           <Link
             component={RouterLink}
-            href={paths.marketing.post}
+            href={paths.filiais.post}
             color="inherit"
             variant="h4"
             sx={(theme) => ({ ...theme.mixins.maxLine({ line: 3 }) })}

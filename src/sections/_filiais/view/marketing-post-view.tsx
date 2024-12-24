@@ -163,7 +163,7 @@ export function MarketingPostView() {
           sx={{ my: 3 }}
           links={[
             { name: 'Home', href: '/' },
-            { name: 'Blog', href: paths.marketing.posts },
+            { name: 'Blog', href: paths.filiais.posts },
             { name: post.title },
           ]}
         />
