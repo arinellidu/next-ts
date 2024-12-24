@@ -22,6 +22,14 @@
     "noEmit": true,
     "strictNullChecks": true,
 
+    /* Shadcn */
+    "paths": {
+      "@components/*": ["components/*"],
+      "@styles/*": ["styles/*"],
+      "@utils/*": ["utils/*"]
+      // Add more aliases as needed
+    },
+
     /* Plugins */
     "plugins": [{ "name": "next" }]
   },
