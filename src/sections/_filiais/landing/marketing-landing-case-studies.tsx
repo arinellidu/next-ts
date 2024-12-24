@@ -89,7 +89,7 @@ export function MarketingLandingCaseStudies({ caseStudies, sx, ...other }: Props
         <Box sx={{ textAlign: { xs: 'center', md: 'right' } }}>
           <Button
             component={RouterLink}
-            href={paths.marketing.caseStudies}
+            href={paths.filiais.caseStudies}
             size="large"
             color="inherit"
             endIcon={<Iconify icon="solar:alt-arrow-right-outline" />}
@@ -136,7 +136,7 @@ function LargeItem({ item, sx }: Omit<ItemProps, 'isSquare'>) {
 
       <Button
         component={RouterLink}
-        href={paths.marketing.caseStudy(item.id)}
+        href={paths.filiais.caseStudy(item.id)}
         size="small"
         color="inherit"
         endIcon={<Iconify width={16} icon="solar:alt-arrow-right-outline" sx={{ ml: -0.5 }} />}
@@ -199,7 +199,7 @@ function SmallItem({ item, isSquare, sx }: ItemProps) {
 
       <Link
         component={RouterLink}
-        href={paths.marketing.caseStudy(item.id)}
+        href={paths.filiais.caseStudy(item.id)}
         variant="h6"
         color="inherit"
         underline="none"
