@@ -21,7 +21,7 @@ import { MarketingLandingAbout } from '../landing/marketing-landing-about';
 import { MarketingLandingProcess } from '../landing/marketing-landing-process';
 import { MarketingLandingFreeSEO } from '../landing/marketing-landing-free-seo';
 import { MarketingLandingServices } from '../landing/marketing-landing-services';
-import { MarketingLandingCaseStudies } from '../landing/marketing-landing-geral';
+import { MarketingLandingCaseStudies } from '../landing/marketing-landing-case-studies';
 
 // ----------------------------------------------------------------------
 
