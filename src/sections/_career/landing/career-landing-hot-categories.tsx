@@ -26,6 +26,7 @@ export function CareerLandingHotCategories({ categories, sx, ...other }: Props) 
       <h1 className="border-slate-700 mt-5 p-10 flex-auto  text-5xl font-extrabold text-center text-cyan-400 rounded-xl h-50 shadow-2xl bg-slate-600">
         SERVIÇOS PRESTADOS
       </h1>
+
       <Container className="bg-slate-100 rounded-2xl p-1.5 mb-2 border-solid">
         <Box
           className="mb-3"
