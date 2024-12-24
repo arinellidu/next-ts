@@ -40,8 +40,7 @@ export function Footer({ layoutQuery = 'md', sx, ...other }: FooterProps) {
     <>
       <Logo />
       <Typography variant="body2" sx={{ maxWidth: 360, color: 'text.secondary' }}>
-        The starting point for your next project based on easy-to-customize Material-UI © helps you
-        build apps faster and better.
+        The starting point for your next project
       </Typography>
     </>
   );

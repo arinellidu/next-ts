@@ -5,6 +5,8 @@ import Container from '@mui/material/Container';
 
 import { Logo } from 'src/components/logo';
 
+import { Typebot } from 'src/components/typebot/typebot';
+
 // ----------------------------------------------------------------------
 
 export function HomeFooter({ sx, ...other }: BoxProps) {
@@ -18,6 +20,8 @@ export function HomeFooter({ sx, ...other }: BoxProps) {
         }}
       >
         <Logo isSingle sx={{ mb: 1 }} />
+
+        <Typebot />
 
         <Box component="span" sx={{ color: 'text.secondary', typography: 'caption' }}>
           © All rights reserved.
