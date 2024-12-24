@@ -2,15 +2,15 @@ export const paths = {
   /**
    * Marketing
    */
-  marketing: {
-    root: '/marketing',
-    services: '/marketing/services',
-    caseStudies: '/marketing/case-studies',
-    caseStudy: (id: string) => `/marketing/case-studies/${id}`,
-    posts: '/marketing/posts',
-    post: '/marketing/posts/details',
-    about: '/marketing/about',
-    contact: '/marketing/contact',
+  filiais: {
+    root: '/filiais',
+    services: '/filiais/services',
+    caseStudies: '/filiais/geral',
+    caseStudy: (id: string) => `/filiais/geral/${id}`,
+    posts: '/filiais/posts',
+    post: '/filiais/posts/details',
+    about: '/filiais/about',
+    contact: '/filiais/contact',
   },
   /**
    * Travel

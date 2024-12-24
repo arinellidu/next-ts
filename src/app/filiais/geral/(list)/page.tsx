@@ -1,7 +1,7 @@
 import { _caseStudies } from 'src/_mock';
 import { CONFIG } from 'src/global-config';
 
-import { MarketingCaseStudiesView } from 'src/sections/_marketing/view/marketing-case-studies-view';
+import { MarketingCaseStudiesView } from 'src/sections/_filiais/view/marketing-geral-view';
 
 // ----------------------------------------------------------------------
 

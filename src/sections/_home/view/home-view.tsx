@@ -26,7 +26,7 @@ import { HomeFAQs } from '../home-faqs';
 
 import { HomeForDesigner } from '../home-for-designer';
 
-import { MarketingServicesHowItWork } from 'src/sections/_marketing/services/marketing-services-how-it-work';
+import { MarketingServicesHowItWork } from 'src/sections/_filiais/services/marketing-services-how-it-work';
 
 import { CareerLandingHotCategories } from 'src/sections/_career/landing/career-landing-hot-categories';
 

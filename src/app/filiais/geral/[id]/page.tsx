@@ -3,7 +3,7 @@ import type { Metadata } from 'next';
 import { _caseStudies } from 'src/_mock';
 import { CONFIG } from 'src/global-config';
 
-import { MarketingCaseStudyView } from 'src/sections/_marketing/view/marketing-case-study-view';
+import { MarketingCaseStudyView } from 'src/sections/_filiais/view/marketing-case-study-view';
 
 // ----------------------------------------------------------------------
 

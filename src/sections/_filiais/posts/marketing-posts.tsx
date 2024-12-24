@@ -86,7 +86,7 @@ export function PostItem({ post, sx, ...other }: PostItemProps) {
 
       <Link
         component={RouterLink}
-        href={paths.marketing.post}
+        href={paths.filiais.post}
         variant="h5"
         color="inherit"
         underline="none"

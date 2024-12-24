@@ -1,6 +1,6 @@
 import { CONFIG } from 'src/global-config';
 
-import { MarketingLandingView } from 'src/sections/_marketing/view/marketing-landing-view';
+import { MarketingLandingView } from 'src/sections/_filiais/view/marketing-landing-view';
 
 // ----------------------------------------------------------------------
 

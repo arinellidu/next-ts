@@ -48,7 +48,7 @@ export function MarketingCaseStudyView({ caseStudy, relatedCaseStudies, sx, ...o
             sx={{ my: 5 }}
             links={[
               { name: 'Home', href: '/' },
-              { name: 'Case studies', href: paths.marketing.caseStudies },
+              { name: 'Case studies', href: paths.filiais.caseStudies },
               { name: caseStudy?.title },
             ]}
           />

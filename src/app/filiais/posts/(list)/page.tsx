@@ -1,6 +1,6 @@
 import { CONFIG } from 'src/global-config';
 
-import { MarketingPostsView } from 'src/sections/_marketing/view/marketing-posts-view';
+import { MarketingPostsView } from 'src/sections/_filiais/view/marketing-posts-view';
 
 // ----------------------------------------------------------------------
 

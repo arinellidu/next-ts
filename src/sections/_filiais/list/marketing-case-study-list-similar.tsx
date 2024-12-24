@@ -34,7 +34,7 @@ export function MarketingCaseStudyListSimilar({ caseStudies, sx, ...other }: Pro
 
           <Button
             component={RouterLink}
-            href={paths.marketing.caseStudies}
+            href={paths.filiais.caseStudies}
             color="inherit"
             endIcon={<Iconify icon="solar:alt-arrow-right-outline" />}
           >

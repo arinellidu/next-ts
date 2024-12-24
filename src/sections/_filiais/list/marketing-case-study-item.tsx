@@ -27,7 +27,7 @@ export function MarketingCaseStudyItem({ project, sx, ...other }: Props) {
 
         <Link
           component={RouterLink}
-          href={paths.marketing.caseStudy(project.id)}
+          href={paths.filiais.caseStudy(project.id)}
           color="inherit"
           variant="h6"
           noWrap
