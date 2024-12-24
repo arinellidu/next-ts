@@ -1,17 +1,24 @@
 import type { BoxProps } from '@mui/material/Box';
 import type { IJobByCategoryProps } from 'src/types/job';
+import type { Variants } from 'framer-motion';
 
 import Box from '@mui/material/Box';
 import Paper from '@mui/material/Paper';
+
+import { m } from 'framer-motion';
 
 import Container from '@mui/material/Container';
 import Typography from '@mui/material/Typography';
 
 import { SvgColor } from 'src/components/svg-color';
-import { bgGradient } from 'src/theme';
+
+import { CONFIG } from 'src/global-config';
+import { varAlpha } from 'minimal-shared/utils';
+import { whitespace } from 'stylis';
+import { varFade, AnimateBorder, MotionViewport } from 'src/components/animate';
 
 // ----------------------------------------------------------------------
-
+const variants: Variants = varFade('inUp', { distance: 24 });
 type Props = BoxProps & {
   categories: IJobByCategoryProps[];
 };
@@ -19,15 +26,42 @@ type Props = BoxProps & {
 export function CareerLandingHotCategories({ categories, sx, ...other }: Props) {
   return (
     <Box
+      // className="bg-slate-950"
       component="section"
-      sx={[{ pt: { xs: 10, md: 15 }, pb: { xs: 5, md: 10 } }, ...(Array.isArray(sx) ? sx : [sx])]}
+      sx={[
+        (theme) => ({
+          ...theme.mixins.bgGradient({
+            images: [
+              `radial-gradient(50% 160% at 50% 50%, ${varAlpha(theme.vars.palette.common.blackChannel, 0.75)}, ${theme.vars.palette.common.black})`,
+              // `url(${CONFIG.assetsDir}/assets/images/home/for-designer.webp)`,
+            ],
+          }),
+        }),
+        { pt: { xs: 10, md: 15 }, pb: { xs: 5, md: 10 } },
+        ...(Array.isArray(sx) ? sx : [sx]),
+      ]}
       {...other}
     >
-      <h1 className="border-slate-700 mt-5 p-10 flex-auto  text-5xl font-extrabold text-center text-cyan-400 rounded-xl h-50 shadow-2xl bg-slate-600">
-        SERVIÇOS PRESTADOS
-      </h1>
+      <m.div variants={variants}>
+        <Typography
+          variant="h2"
+          sx={(theme) => ({
+            ...theme.mixins.textGradient(
+              `90deg, ${theme.vars.palette.info.main} 40%, ${theme.vars.palette.secondary.main} 80%`
+            ),
+            display: 'flex',
+            textAlign: 'center',
+            bgcolor: 'grey.700',
+            color: 'common.white',
+            justifyContent: 'center',
+            py: { xs: 2.5, md: 5 },
+          })}
+        >
+          Serviços Prestados
+        </Typography>
+      </m.div>
 
-      <Container className="bg-slate-100 rounded-2xl p-1.5 mb-2 border-solid">
+      <Container className=" rounded-2xl p-1.5 mb-2 border-solid">
         <Box
           className="mb-3"
           sx={{
@@ -70,7 +104,7 @@ type CategoryItemProps = {
 function CategoryItem({ category }: CategoryItemProps) {
   return (
     <Paper
-      className="mb-3 outline-dotted outline-zinc-400 cursor-pointer border-solid hover:bg-zinc-50"
+      className=" mb-3 outline-dotted shadow-2xl outline-sky-400 cursor-pointer border-solid hover:bg-zinc-50"
       variant="outlined"
       sx={(theme) => ({
         p: 0,
@@ -84,14 +118,18 @@ function CategoryItem({ category }: CategoryItemProps) {
         bgcolor: 'transparent',
         justifyContent: 'center',
         flexDirection: 'column',
-        boxShadow: theme.vars.customShadows.card,
+        color: 'white',
+        // color: 'dodgerblue',
+        // color: 'blueviolet',
+        // boxShadow: theme.vars.customShadows.card,
         transition: theme.transitions.create(['all']),
         '&:hover': {
           // bgcolor: 'background.paper',
+          color: 'dodgerblue',
           boxShadow: theme.vars.customShadows.z24,
           '& .icon': {
             color: 'common.white',
-            bgcolor: 'info.main',
+            bgcolor: 'dodgerblue',
             transition: theme.transitions.create(['all']),
           },
         },

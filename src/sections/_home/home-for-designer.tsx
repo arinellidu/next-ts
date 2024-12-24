@@ -27,8 +27,8 @@ export function HomeForDesigner({ sx, ...other }: BoxProps) {
         (theme) => ({
           ...theme.mixins.bgGradient({
             images: [
-              `radial-gradient(50% 160% at 50% 50%, ${varAlpha(theme.vars.palette.common.blackChannel, 0.4)}, ${theme.vars.palette.common.black})`,
-              `url(${CONFIG.assetsDir}/assets/images/home/for-designer.webp)`,
+              `radial-gradient(50% 160% at 50% 50%, ${varAlpha(theme.vars.palette.common.blackChannel, 0.65)}, ${theme.vars.palette.common.black})`,
+              // `url(${CONFIG.assetsDir}/assets/images/home/for-designer.webp)`,
             ],
           }),
           display: 'flex',
@@ -44,7 +44,7 @@ export function HomeForDesigner({ sx, ...other }: BoxProps) {
     >
       <MotionViewport>
         <m.div variants={variants}>
-          <Typography variant="overline" sx={{ opacity: 0.48 }}>
+          <Typography variant="overline" sx={{ opacity: 0.6, color: 'white' }}>
             Botar foto de fundo tirada pelo marketing...
           </Typography>
         </m.div>

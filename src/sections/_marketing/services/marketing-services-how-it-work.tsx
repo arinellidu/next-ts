@@ -11,6 +11,7 @@ import Typography from '@mui/material/Typography';
 import TimelineContent from '@mui/lab/TimelineContent';
 import TimelineConnector from '@mui/lab/TimelineConnector';
 import TimelineSeparator from '@mui/lab/TimelineSeparator';
+import { Divider } from '@mui/material';
 
 import { CONFIG } from 'src/global-config';
 
@@ -45,63 +46,64 @@ const TIMELINES = [
 
 export function MarketingServicesHowItWork({ sx, ...other }: BoxProps) {
   return (
-    <Box
-      sx={[
-        (theme) => ({
-          ...theme.mixins.bgGradient({
-            images: [`url(${CONFIG.assetsDir}/assets/images/home/bluesky.jpg)`],
-          }),
-          color: 'common.white',
-        }),
-        ...(Array.isArray(sx) ? sx : [sx]),
-      ]}
-      {...other}
-    >
-      <Typography
-        marginTop={'180px'}
-        paddingBottom={'-80px'}
-        fontSize={'182px'}
-        fontWeight={'900'}
-        sx={{
-          textAlign: 'center',
-          mixBlendMode: 'soft-light',
-          color: 'InfoBackground',
-        }}
-      >
-        FRADEMA
-      </Typography>
+    <>
       <Box
-        component="section"
         sx={[
           (theme) => ({
             ...theme.mixins.bgGradient({
-              images: [
-                `linear-gradient(to bottom, ${varAlpha(theme.vars.palette.common.blackChannel, 0)}, ${varAlpha(theme.vars.palette.common.blackChannel, 0)})`,
-                `url(${CONFIG.assetsDir}/assets/images/home/nyblue.png)`,
-              ],
+              images: [`url(${CONFIG.assetsDir}/assets/images/home/bluesky.jpg)`],
             }),
             color: 'common.white',
-            py: { xs: 30, md: 35 },
-            marginTop: '-182px',
           }),
           ...(Array.isArray(sx) ? sx : [sx]),
         ]}
         {...other}
       >
-        <Container>
-          <Typography
-            sx={{
-              mt: 1,
-              mx: 'auto',
-              fontSize: '20px',
-              opacity: 0.72,
-              maxWidth: 480,
-              textAlign: 'center',
-              mb: { xs: 5, md: 10 },
-            }}
-          ></Typography>
+        <Typography
+          marginTop={'180px'}
+          paddingBottom={'-80px'}
+          fontSize={'182px'}
+          fontWeight={'900'}
+          sx={{
+            textAlign: 'center',
+            mixBlendMode: 'soft-light',
+            color: 'InfoBackground',
+          }}
+        >
+          FRADEMA
+        </Typography>
+        <Box
+          component="section"
+          sx={[
+            (theme) => ({
+              ...theme.mixins.bgGradient({
+                images: [
+                  `linear-gradient(to bottom, ${varAlpha(theme.vars.palette.common.blackChannel, 0)}, ${varAlpha(theme.vars.palette.common.blackChannel, 0)})`,
+                  `url(${CONFIG.assetsDir}/assets/images/home/nyblue.png)`,
+                ],
+              }),
+              color: 'common.white',
+              py: { xs: 30, md: 35 },
+              marginTop: '-182px',
+            }),
+            ...(Array.isArray(sx) ? sx : [sx]),
+          ]}
+          {...other}
+        >
+          <Container>
+            <Typography
+              sx={{
+                mt: 1,
+                mx: 'auto',
+                fontSize: '20px',
+                opacity: 0.72,
+                maxWidth: 480,
+                textAlign: 'center',
+                mb: { xs: 5, md: 10 },
+              }}
+            ></Typography>
 
-          {/* <Timeline position="alternate">
+            {/* <Timeline position="alternate">
             {TIMELINES.map((value, index) => (
               <TimelineItem key={value.title}>
                 <TimelineSeparator>
@@ -109,7 +111,7 @@ export function MarketingServicesHowItWork({ sx, ...other }: BoxProps) {
                   <TimelineConnector />
                 </TimelineSeparator> */}
 
-          {/* <TimelineContent sx={{ pb: { xs: 3, md: 5 } }}>
+            {/* <TimelineContent sx={{ pb: { xs: 3, md: 5 } }}>
                   <Typography variant="overline" sx={{ color: `${COLORS[index]}.main` }}>
                     FASE {index + 1}
                   </Typography>
@@ -125,11 +127,13 @@ export function MarketingServicesHowItWork({ sx, ...other }: BoxProps) {
                     {value.description}
                   </Typography>
                 </TimelineContent> */}
-          {/* </TimelineItem>
+            {/* </TimelineItem>
             ))}
           </Timeline> */}
-        </Container>
+          </Container>
+        </Box>
       </Box>
-    </Box>
+      <Divider component="section" className="h-10 bg-slate-200" />
+    </>
   );
 }

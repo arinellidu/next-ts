@@ -24,6 +24,8 @@ import {
   CarouselDotButtons,
   CarouselArrowBasicButtons,
 } from 'src/components/carousel';
+import { Divider } from '@mui/material';
+import { secondary } from 'src/theme';
 
 // ----------------------------------------------------------------------
 
@@ -31,90 +33,94 @@ export function EcommerceLandingHero({ sx, ...other }: BoxProps) {
   const carousel = useCarousel({ loop: true, duration: 80 }, [Autoplay({ delay: 5000 }), Fade()]);
 
   return (
-    <Box
-      component="section"
-      sx={[
-        (theme) => ({
-          ...theme.mixins.bgGradient({
-            images: [
-              `linear-gradient(to bottom, ${varAlpha(theme.vars.palette.common.blackChannel, 0.65)}, ${varAlpha(theme.vars.palette.common.blackChannel, 0.65)})`,
-              `url(${CONFIG.assetsDir}/assets/background/overlay-2.webp)`,
-            ],
-          }),
-          overflow: 'hidden',
-          position: 'relative',
-        }),
-        ...(Array.isArray(sx) ? sx : [sx]),
-      ]}
-      {...other}
-    >
+    <>
+      <Divider component="section" className="h-10 border-r-8 w-10" />
       <Box
-        component="img"
-        alt="Texture"
-        src={`${CONFIG.assetsDir}/assets/background/texture-2.webp`}
-        sx={{ top: 0, right: 0, height: 1, width: 'auto', position: 'absolute' }}
-      />
-      <Container sx={{ position: 'relative' }}>
-        <Carousel carousel={carousel}>
-          {_productsCarousel.map((product, index) => (
-            <CarouselItem
-              key={product.id}
-              product={product}
-              selected={carousel.dots.selectedIndex === index}
-            />
-          ))}
-        </Carousel>
-
+        className="border-r-4"
+        component="section"
+        sx={[
+          (theme) => ({
+            ...theme.mixins.bgGradient({
+              images: [
+                `radial-gradient(50% 160% at 50% 50%, ${varAlpha(theme.vars.palette.common.blackChannel, 0.75)}, ${theme.vars.palette.common.black})`,
+                // `url(${CONFIG.assetsDir}/assets/background/derek.jpg)`,
+              ],
+            }),
+            overflow: 'hidden',
+            position: 'relative',
+          }),
+          ...(Array.isArray(sx) ? sx : [sx]),
+        ]}
+        {...other}
+      >
         <Box
-          sx={{
-            display: 'flex',
-            alignItems: 'center',
-            justifyContent: 'space-between',
-            transform: 'translateY(-64px)',
-          }}
-        >
-          <CarouselDotButtons
-            variant="rounded"
-            scrollSnaps={carousel.dots.scrollSnaps}
-            selectedIndex={carousel.dots.selectedIndex}
-            onClickDot={carousel.dots.onClickDot}
-            sx={{ color: 'info.main' }}
-          />
+          component="img"
+          alt="Texture"
+          src={`${CONFIG.assetsDir}/assets/background/texture-2.webp`}
+          sx={{ top: 0, right: 0, height: 1, width: 'auto', position: 'absolute' }}
+        />
+        <Container sx={{ position: 'relative' }}>
+          <Carousel carousel={carousel}>
+            {_productsCarousel.map((product, index) => (
+              <CarouselItem
+                key={product.id}
+                product={product}
+                selected={carousel.dots.selectedIndex === index}
+              />
+            ))}
+          </Carousel>
 
-          <CarouselArrowBasicButtons
-            {...carousel.arrows}
-            options={carousel.options}
-            slotProps={{
-              prevBtn: {
-                svgIcon: (
-                  <path
-                    fill="none"
-                    stroke="currentColor"
-                    strokeLinecap="round"
-                    strokeLinejoin="round"
-                    strokeWidth="2"
-                    d="m15 5l-6 7l6 7"
-                  />
-                ),
-              },
-              nextBtn: {
-                svgIcon: (
-                  <path
-                    fill="none"
-                    stroke="currentColor"
-                    strokeLinecap="round"
-                    strokeLinejoin="round"
-                    strokeWidth="2"
-                    d="m9 5l6 7l-6 7"
-                  />
-                ),
-              },
+          <Box
+            sx={{
+              display: 'flex',
+              alignItems: 'center',
+              justifyContent: 'space-between',
+              transform: 'translateY(-64px)',
             }}
-            sx={{ gap: 1, color: 'info.main' }}
-          />
-        </Box>
-      </Container>
-    </Box>
+          >
+            <CarouselDotButtons
+              variant="rounded"
+              scrollSnaps={carousel.dots.scrollSnaps}
+              selectedIndex={carousel.dots.selectedIndex}
+              onClickDot={carousel.dots.onClickDot}
+              sx={{ color: 'info.main' }}
+            />
+
+            <CarouselArrowBasicButtons
+              {...carousel.arrows}
+              options={carousel.options}
+              slotProps={{
+                prevBtn: {
+                  svgIcon: (
+                    <path
+                      fill="none"
+                      stroke="currentColor"
+                      strokeLinecap="round"
+                      strokeLinejoin="round"
+                      strokeWidth="2"
+                      d="m15 5l-6 7l6 7"
+                    />
+                  ),
+                },
+                nextBtn: {
+                  svgIcon: (
+                    <path
+                      fill="none"
+                      stroke="currentColor"
+                      strokeLinecap="round"
+                      strokeLinejoin="round"
+                      strokeWidth="2"
+                      d="m9 5l6 7l-6 7"
+                    />
+                  ),
+                },
+              }}
+              sx={{ gap: 1, color: 'info.main' }}
+            />
+          </Box>
+        </Container>
+      </Box>
+    </>
   );
 }
 

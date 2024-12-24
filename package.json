@@ -57,6 +57,7 @@
     "framer-motion": "^11.13.1",
     "lucide-react": "^0.469.0",
     "minimal-shared": "^1.0.3",
+    "motion": "^11.15.0",
     "mui-one-time-password-input": "^3.0.1",
     "next": "^14.2.20",
     "nprogress": "^0.2.0",
