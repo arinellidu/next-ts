@@ -25,16 +25,15 @@ export const MarketingContactSchema = zod.object({
   services: zod.string().array().min(2, { message: 'Must have at least 2 items!' }),
   email: zod
     .string()
-    .min(1, { message: 'Email is required!' })
-    .email({ message: 'Email must be a valid email address!' }),
-  compnany: zod.string().min(1, { message: 'Full name is required!' }),
-  website: zod.string().min(1, { message: 'Full name is required!' }),
-  message: zod.string().min(1, { message: 'Full name is required!' }),
+    .min(5, { message: 'Digite seu Email' })
+    .email({ message: 'Email precisa ser válido!' }),
+  compnany: zod.string(),
+  website: zod.string(),
+  message: zod.string().min(5, { message: 'Deixe aqui sua mensagem' }),
   // Not required
-  firstName: zod.string(),
-  lastName: zod.string(),
-  phoneNumber: zod.string(),
-  budget: zod.number().array(),
+  firstName: zod.string().min(2, { message: 'Primeiro nome é requerido!' }),
+  lastName: zod.string().min(2, { message: 'Sobrenome nome é requerido!' }),
+  phoneNumber: zod.string().min(13, { message: 'Número de celular não compatível' }),
 });
 
 // ----------------------------------------------------------------------
@@ -49,7 +48,6 @@ export function MarketingContactForm({ sx, ...other }: BoxProps) {
     lastName: '',
     firstName: '',
     phoneNumber: '',
-    budget: [2000, 10000],
   };
 
   const methods = useForm<MarketingContactSchemaType>({
