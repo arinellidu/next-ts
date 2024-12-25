@@ -39,3 +39,10 @@ tsconfig.tsbuildinfo
 
 # Sentry Config File
 .env.sentry-build-plugin
+
+
+# amplify
+node_modules
+.amplify
+amplify_outputs*
+amplifyconfiguration*
