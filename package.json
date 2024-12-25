@@ -80,13 +80,10 @@
     "stylis-plugin-rtl": "^2.1.1",
     "tailwind-merge": "^2.5.5",
     "tailwindcss-animate": "^1.0.7",
-    "type": "module",
     "yet-another-react-lightbox": "^3.21.7",
     "zod": "^3.23.8"
   },
   "devDependencies": {
-    "@aws-amplify/backend": "^1.11.0",
-    "@aws-amplify/backend-cli": "^1.4.5",
     "@eslint/js": "^9.16.0",
     "@svgr/webpack": "^8.1.0",
     "@types/node": "^22.10.1",
