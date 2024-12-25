@@ -22,7 +22,7 @@ import { Form, Field } from 'src/components/hook-form';
 export type MarketingContactSchemaType = zod.infer<typeof MarketingContactSchema>;
 
 export const MarketingContactSchema = zod.object({
-  serviços: zod.string().array().min(2, { message: 'Must have at least 2 items!' }),
+  serviços: zod.string().array().min(1, { message: 'Escolha uma filial Fradema!' }),
   email: zod
     .string()
     .min(5, { message: 'Digite seu Email' })
@@ -83,7 +83,7 @@ export function MarketingContactForm({ sx, ...other }: BoxProps) {
   const renderServiceOptions = () => (
     <div>
       <Box sx={{ gap: 1, display: 'flex', flexWrap: 'wrap' }}>
-        {_tags.slice(0, 5).map((serviço) => (
+        {_tags.slice(0, 7).map((serviço) => (
           <ButtonBase
             disableRipple
             key={serviço}
@@ -190,7 +190,7 @@ export function MarketingContactForm({ sx, ...other }: BoxProps) {
           loading={isSubmitting}
           sx={{ mt: 3 }}
         >
-          Enviar
+          Enviar formulário!
         </LoadingButton>
       </Form>
     </Box>
