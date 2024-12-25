@@ -26,8 +26,7 @@
     "paths": {
       "@components/*": ["components/*"],
       "@styles/*": ["styles/*"],
-      "@utils/*": ["utils/*"],
-      "$amplify/*": ["../.amplify/generated/*"]
+      "@utils/*": ["utils/*"]
       // Add more aliases as needed
     },
 
