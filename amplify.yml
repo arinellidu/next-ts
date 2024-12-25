@@ -1,0 +1,12 @@
+version: 1
+frontend:
+  preBuild:
+    commands:
+      - npm install
+  build:
+    commands:
+      - nvm use 20
+      - npm run build
+
+  artifacts:
+    baseDirectory: .amplify-hosting
