@@ -8,4 +8,4 @@ frontend:
       - npm run build
 
   artifacts:
-    baseDirectory: .amplify-hosting
+    baseDirectory: ./
