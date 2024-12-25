@@ -33,7 +33,7 @@ export const MarketingContactSchema = zod.object({
   // Not required
   nome: zod.string().min(2, { message: 'Primeiro nome é requerido!' }),
   sobrenome: zod.string().min(2, { message: 'Sobrenome nome é requerido!' }),
-  cel: zod.string().min(13, { message: 'Número de celular não compatível' }),
+  cel: zod.string().min(11, { message: 'Número de celular não compatível' }),
 });
 
 // ----------------------------------------------------------------------
