@@ -116,13 +116,13 @@ export function MarketingContact() {
                       <SelectValue placeholder="Selecione" />
                     </SelectTrigger>
                     <SelectContent>
-                      <SelectItem value="aus">Fradema - RJ</SelectItem>
-                      <SelectItem value="aus">Fradema - SP</SelectItem>
-                      <SelectItem value="aus">Fradema - Campinas</SelectItem>
+                      <SelectItem value="rj">Fradema - RJ</SelectItem>
+                      <SelectItem value="sp">Fradema - SP</SelectItem>
+                      <SelectItem value="campinas">Fradema - Campinas</SelectItem>
                     </SelectContent>
                   </Select>
                 </div>
-                <div>
+                {/* <div>
                   <div className="mb-2.5 text-sm font-medium">
                     <label htmlFor="companySize">Company size</label>
                   </div>
@@ -137,11 +137,11 @@ export function MarketingContact() {
                       <SelectItem value="200+">200+</SelectItem>
                     </SelectContent>
                   </Select>
-                </div>
+                </div> */}
                 <div>
                   <div className="mb-2.5 text-sm font-medium">
                     <label htmlFor="id">
-                      How did you hear about us?{' '}
+                      Como descobriu a Empresa ?{' '}
                       <span className="text-muted-foreground">(Opcional)</span>
                     </label>
                   </div>
@@ -150,12 +150,15 @@ export function MarketingContact() {
                       <SelectValue placeholder="Select" />
                     </SelectTrigger>
                     <SelectContent>
-                      <SelectItem value="search">Web Search</SelectItem>
+                      <SelectItem value="search">Web</SelectItem>
+                      <SelectItem value="search">Outros clientes</SelectItem>
+                      <SelectItem value="search">Redes sociais</SelectItem>
+                      <SelectItem value="search">Outros</SelectItem>
                     </SelectContent>
                   </Select>
                 </div>
                 <div className="flex w-full flex-col justify-end space-y-3 pt-2">
-                  <Button type="submit">Book demo</Button>
+                  <Button type="submit">Enviar formulário</Button>
                   <div className="text-xs text-muted-foreground">
                     For more information about how we handle your personal information, please visit
                     our{' '}

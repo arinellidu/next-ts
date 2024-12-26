@@ -55,8 +55,6 @@ export function HomeView() {
 
       <EcommerceLandingHero />
 
-      {/* <HomeForDesigner /> */}
-
       {/* rever marketingcontactform */}
       <MarketingContact />
 

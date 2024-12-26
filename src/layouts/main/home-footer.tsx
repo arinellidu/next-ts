@@ -31,7 +31,7 @@ export function HomeFooter({ sx, ...other }: BoxProps) {
           </Box>
         </Container>
       </Box>
-      <MarketingContactInfo className="justify-start" />
+      <MarketingContactInfo className="justify-start ml-10 mb-5" />
     </>
   );
 }
