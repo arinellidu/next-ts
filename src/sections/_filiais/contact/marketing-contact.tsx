@@ -22,7 +22,7 @@ export function MarketingContact() {
       <div className="container grid w-full grid-cols-1 gap-x-32 overflow-hidden lg:grid-cols-2">
         <div className="w-full pb-10 md:space-y-10 md:pb-0">
           <div className="space-y-4 md:max-w-[40rem]">
-            <h1 className="text-4xl font-medium lg:text-5xl ml-3">
+            <h1 className="text-4xl font-bold lg:text-5xl ml-3">
               Fale com um de nossos Consultores
             </h1>
             <div className="text-muted-foreground md:text-base lg:text-lg lg:leading-7 ml-3">
