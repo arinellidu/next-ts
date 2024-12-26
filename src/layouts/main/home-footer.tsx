@@ -22,16 +22,15 @@ export function HomeFooter({ sx, ...other }: BoxProps) {
             flexDirection: 'column',
           }}
         >
-          <Logo isSingle sx={{ mb: 1 }} />
-
           <Typebot />
 
           <Box component="span" sx={{ color: 'text.secondary', typography: 'caption' }}>
             © All rights reserved.
           </Box>
+          <Logo isSingle sx={{ mb: 4, justifyContent: 'center', alignContent: 'center' }} />
+          <MarketingContactInfo className="justify-start ml-10" />
         </Container>
       </Box>
-      <MarketingContactInfo className="justify-start ml-10 mb-5" />
     </>
   );
 }
