@@ -1,6 +1,6 @@
 import type { BoxProps } from '@mui/material/Box';
 
-import { z as zod } from 'zod';
+import { number, z as zod, ZodNumber } from 'zod';
 import { useForm } from 'react-hook-form';
 import { varAlpha } from 'minimal-shared/utils';
 import { zodResolver } from '@hookform/resolvers/zod';
@@ -11,11 +11,14 @@ import Typography from '@mui/material/Typography';
 import LoadingButton from '@mui/lab/LoadingButton';
 import FormHelperText from '@mui/material/FormHelperText';
 
+import { SupabaseClient } from '@supabase/supabase-js';
+
 import { fCurrency } from 'src/utils/format-number';
 
 import { _tags } from 'src/_mock';
 
 import { Form, Field } from 'src/components/hook-form';
+import { NumberInput } from 'src/components/number-input';
 
 // ----------------------------------------------------------------------
 
@@ -33,7 +36,7 @@ export const MarketingContactSchema = zod.object({
   // Not required
   nome: zod.string().min(2, { message: 'Primeiro nome é requerido!' }),
   sobrenome: zod.string().min(2, { message: 'Sobrenome nome é requerido!' }),
-  cel: zod.string().min(11, { message: 'Número de celular não compatível' }),
+  cel: zod.string().min(12, { message: 'Número de celular não compatível' }),
 });
 
 // ----------------------------------------------------------------------
@@ -121,10 +124,11 @@ export function MarketingContactForm({ sx, ...other }: BoxProps) {
   const renderName = () => (
     <Box
       sx={{
-        width: 1,
+        width: 0.5,
         display: 'flex',
         gap: { xs: 2.5, md: 2 },
         flexDirection: { xs: 'column', md: 'row' },
+        backgroundColor: 'white',
       }}
     >
       <Field.Text name="nome" label="Nome" />

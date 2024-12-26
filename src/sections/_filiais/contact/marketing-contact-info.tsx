@@ -16,30 +16,34 @@ export function MarketingContactInfo({ sx, ...other }: BoxProps) {
     sx: {
       gap: 2,
       display: 'flex',
-      alignItems: 'flex-start',
+      alignItems: 'center',
+      alignContent: 'flex-start',
+      justifyContent: 'flex-start',
     },
   };
 
-  const renderImage = () => (
-    <Box
-      component="img"
-      alt="Marketing contact"
-      src={`${CONFIG.assetsDir}/assets/illustrations/illustration-marketing-contact.svg`}
-      sx={{ width: 380, height: 380, display: { xs: 'none', md: 'block' } }}
-    />
-  );
+  // const renderImage = () => (
+  //   <Box
+  //     component="img"
+  //     alt="Marketing contact"
+  //     src={`${CONFIG.assetsDir}/assets/illustrations/illustration-marketing-contact.svg`}
+  //     sx={{ width: 380, height: 380, display: { xs: 'none', md: 'block' } }}
+  //   />
+  // );
 
   const renderAddress = () => (
     <Box {...rowStyles}>
       <Iconify width={24} icon="carbon:location" sx={{ mt: '2px' }} />
       <div>
         <Box sx={{ gap: 1, display: 'flex', alignItems: 'center', mb: 0.5, typography: 'h6' }}>
-          Visit us
+          Faça uma visita
           <Link>
             <Iconify inline width={18} icon="carbon:launch" />
           </Link>
         </Box>
-        <Typography variant="body2">508 Bridle Avenue Newnan, GA 30263e</Typography>
+        <Typography variant="body2">
+          Rua México 41, 14o andar, Cinelândia, Rio de Janeiro - RJ
+        </Typography>
       </div>
     </Box>
   );
@@ -49,9 +53,9 @@ export function MarketingContactInfo({ sx, ...other }: BoxProps) {
       <Iconify width={24} icon="solar:smartphone-outline" sx={{ mt: '2px' }} />
       <div>
         <Typography variant="h6" sx={{ mb: 0.5 }}>
-          Call us
+          Ligue
         </Typography>
-        <Typography variant="body2">+1 234 567 890</Typography>
+        <Typography variant="body2">+5521 234 567 890</Typography>
       </div>
     </Box>
   );
@@ -61,10 +65,10 @@ export function MarketingContactInfo({ sx, ...other }: BoxProps) {
       <Iconify width={24} icon="carbon:email" sx={{ mt: '2px' }} />
       <div>
         <Typography variant="h6" sx={{ mb: 0.5 }}>
-          Talk to us
+          Fale conosco
         </Typography>
-        <Link color="inherit" variant="body2" href="mailto:hello@example.com">
-          hello@example.com
+        <Link color="inherit" variant="body2" href="mailto:fradema@fradema.com.br">
+          fradema@fradema.com.br
         </Link>
       </div>
     </Box>
@@ -75,9 +79,9 @@ export function MarketingContactInfo({ sx, ...other }: BoxProps) {
       <Iconify width={24} icon="solar:clock-circle-outline" sx={{ mt: '2px' }} />
       <div>
         <Typography variant="h6" sx={{ mb: 0.5 }}>
-          Working hours
+          Horários da empresa
         </Typography>
-        <Typography variant="body2">Mon-Fri: 9 am — 6 pm</Typography>
+        <Typography variant="body2">Seg-Quin: 9:00 — 18:00, Sexta: 9:00 — 17:00</Typography>
       </div>
     </Box>
   );
@@ -90,7 +94,6 @@ export function MarketingContactInfo({ sx, ...other }: BoxProps) {
       ]}
       {...other}
     >
-      {renderImage()}
       {renderAddress()}
       {renderPhone()}
       {renderEmail()}

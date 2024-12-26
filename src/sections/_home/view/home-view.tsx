@@ -31,7 +31,10 @@ import { MarketingServicesHowItWork } from 'src/sections/_filiais/services/marke
 import { CareerLandingHotCategories } from 'src/sections/_career/landing/career-landing-hot-categories';
 
 import { EcommerceLandingHero } from 'src/sections/_ecommerce/landing/ecommerce-landing-hero';
-import { MarketingContactForm } from 'src/sections/_filiais/contact/marketing-contact-form';
+
+import { MarketingContactInfo } from 'src/sections/_filiais/contact/marketing-contact-info';
+
+import { MarketingContact } from 'src/sections/_filiais/contact/marketing-contact';
 
 // ----------------------------------------------------------------------
 
@@ -59,7 +62,9 @@ export function HomeView() {
       <HomeForDesigner />
 
       {/* rever marketingcontactform */}
-      <MarketingContactForm />
+      <MarketingContact />
+
+      <MarketingContactInfo />
 
       <HomeFAQs />
     </>
