@@ -24,15 +24,11 @@ import { ScrollProgress, useScrollProgress } from 'src/components/animate/scroll
 
 import { HomeFAQs } from '../home-faqs';
 
-import { HomeForDesigner } from '../home-for-designer';
-
 import { MarketingServicesHowItWork } from 'src/sections/_filiais/services/marketing-services-how-it-work';
 
 import { CareerLandingHotCategories } from 'src/sections/_career/landing/career-landing-hot-categories';
 
 import { EcommerceLandingHero } from 'src/sections/_ecommerce/landing/ecommerce-landing-hero';
-
-import { MarketingContactInfo } from 'src/sections/_filiais/contact/marketing-contact-info';
 
 import { MarketingContact } from 'src/sections/_filiais/contact/marketing-contact';
 
@@ -63,8 +59,6 @@ export function HomeView() {
 
       {/* rever marketingcontactform */}
       <MarketingContact />
-
-      <MarketingContactInfo />
 
       <HomeFAQs />
     </>

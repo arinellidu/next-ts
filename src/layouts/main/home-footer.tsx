@@ -7,26 +7,31 @@ import { Logo } from 'src/components/logo';
 
 import { Typebot } from 'src/components/typebot/typebot';
 
+import { MarketingContactInfo } from 'src/sections/_filiais/contact/marketing-contact-info';
+
 // ----------------------------------------------------------------------
 
 export function HomeFooter({ sx, ...other }: BoxProps) {
   return (
-    <Box component="footer" sx={[{ py: 8 }, ...(Array.isArray(sx) ? sx : [sx])]} {...other}>
-      <Container
-        sx={{
-          display: 'flex',
-          alignItems: 'center',
-          flexDirection: 'column',
-        }}
-      >
-        <Logo isSingle sx={{ mb: 1 }} />
+    <>
+      <Box component="footer" sx={[{ py: 8 }, ...(Array.isArray(sx) ? sx : [sx])]} {...other}>
+        <Container
+          sx={{
+            display: 'flex',
+            alignItems: 'center',
+            flexDirection: 'column',
+          }}
+        >
+          <Logo isSingle sx={{ mb: 1 }} />
 
-        <Typebot />
+          <Typebot />
 
-        <Box component="span" sx={{ color: 'text.secondary', typography: 'caption' }}>
-          © All rights reserved.
-        </Box>
-      </Container>
-    </Box>
+          <Box component="span" sx={{ color: 'text.secondary', typography: 'caption' }}>
+            © All rights reserved.
+          </Box>
+        </Container>
+      </Box>
+      <MarketingContactInfo className="justify-start" />
+    </>
   );
 }
