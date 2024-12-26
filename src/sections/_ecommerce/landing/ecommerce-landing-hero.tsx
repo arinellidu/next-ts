@@ -1,6 +1,8 @@
 import type { BoxProps } from '@mui/material/Box';
 import type { IProductItemHeroProps } from 'src/types/product';
 
+import { GlareCard } from '@components/components/ui/glare-card';
+
 import Fade from 'embla-carousel-fade';
 import Autoplay from 'embla-carousel-autoplay';
 import { varAlpha } from 'minimal-shared/utils';
@@ -35,7 +37,7 @@ export function EcommerceLandingHero({ sx, ...other }: BoxProps) {
   return (
     <>
       <Box
-        className=""
+        className="h-1000 w-200"
         component="section"
         sx={[
           (theme) => ({
@@ -52,72 +54,74 @@ export function EcommerceLandingHero({ sx, ...other }: BoxProps) {
         ]}
         {...other}
       >
+        <Divider component="section" className="h-2 border-r-8 w-120" />
         <Box
           component="img"
           alt="Texture"
           src={`${CONFIG.assetsDir}/assets/background/texture-2.webp`}
           sx={{ top: 0, right: 0, height: 1, width: 'auto', position: 'absolute' }}
         />
-        <Divider component="section" className="h-2 border-r-8 w-120" />
-        <Container sx={{ position: 'relative', marginTop: '-80px' }}>
-          <Carousel carousel={carousel}>
-            {_productsCarousel.map((product, index) => (
-              <CarouselItem
-                key={product.id}
-                product={product}
-                selected={carousel.dots.selectedIndex === index}
-              />
-            ))}
-          </Carousel>
 
-          <Box
-            sx={{
-              display: 'flex',
-              alignItems: 'center',
-              justifyContent: 'space-between',
-              transform: 'translateY(-64px)',
-            }}
-          >
-            <CarouselDotButtons
+        <Container className="h-400" sx={{ position: 'relative', marginTop: '-80px' }}>
+          <GlareCard className="flex flex-col items-center justify-center w-400 h-320">
+            <Box
+              sx={{
+                display: 'flex',
+                alignItems: 'center',
+                justifyContent: 'space-between',
+                transform: 'translateY(-64px)',
+              }}
+            >
+              {/* <CarouselDotButtons
               variant="rounded"
               scrollSnaps={carousel.dots.scrollSnaps}
               selectedIndex={carousel.dots.selectedIndex}
               onClickDot={carousel.dots.onClickDot}
               sx={{ color: 'info.main' }}
-            />
+            /> */}
+              <Carousel carousel={carousel}>
+                {_productsCarousel.map((product, index) => (
+                  <CarouselItem
+                    key={product.id}
+                    product={product}
+                    selected={carousel.dots.selectedIndex === index}
+                  />
+                ))}
+              </Carousel>
 
-            <CarouselArrowBasicButtons
-              {...carousel.arrows}
-              options={carousel.options}
-              slotProps={{
-                prevBtn: {
-                  svgIcon: (
-                    <path
-                      fill="none"
-                      stroke="currentColor"
-                      strokeLinecap="round"
-                      strokeLinejoin="round"
-                      strokeWidth="2"
-                      d="m15 5l-6 7l6 7"
-                    />
-                  ),
-                },
-                nextBtn: {
-                  svgIcon: (
-                    <path
-                      fill="none"
-                      stroke="currentColor"
-                      strokeLinecap="round"
-                      strokeLinejoin="round"
-                      strokeWidth="2"
-                      d="m9 5l6 7l-6 7"
-                    />
-                  ),
-                },
-              }}
-              sx={{ gap: 1, color: 'info.main' }}
-            />
-          </Box>
+              <CarouselArrowBasicButtons
+                {...carousel.arrows}
+                options={carousel.options}
+                slotProps={{
+                  prevBtn: {
+                    svgIcon: (
+                      <path
+                        fill="none"
+                        stroke="currentColor"
+                        strokeLinecap="round"
+                        strokeLinejoin="round"
+                        strokeWidth="2"
+                        d="m15 5l-6 7l6 7"
+                      />
+                    ),
+                  },
+                  nextBtn: {
+                    svgIcon: (
+                      <path
+                        fill="none"
+                        stroke="currentColor"
+                        strokeLinecap="round"
+                        strokeLinejoin="round"
+                        strokeWidth="2"
+                        d="m9 5l6 7l-6 7"
+                      />
+                    ),
+                  },
+                }}
+                sx={{ gap: 1, color: 'info.main' }}
+              />
+            </Box>
+          </GlareCard>
         </Container>
       </Box>
     </>
