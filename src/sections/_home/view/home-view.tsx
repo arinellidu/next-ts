@@ -59,7 +59,7 @@ export function HomeView() {
 
       <EcommerceLandingHero />
 
-      <HomeForDesigner />
+      {/* <HomeForDesigner /> */}
 
       {/* rever marketingcontactform */}
       <MarketingContact />

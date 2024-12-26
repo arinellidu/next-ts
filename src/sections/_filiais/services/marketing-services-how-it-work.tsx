@@ -133,7 +133,7 @@ export function MarketingServicesHowItWork({ sx, ...other }: BoxProps) {
           </Container>
         </Box>
       </Box>
-      <Divider component="section" className="h-10 bg-slate-200" />
+      <Divider component="section" className="h-2 bg-slate-500" />
     </>
   );
 }

@@ -34,9 +34,8 @@ export function EcommerceLandingHero({ sx, ...other }: BoxProps) {
 
   return (
     <>
-      <Divider component="section" className="h-10 border-r-8 w-10" />
       <Box
-        className="border-r-4"
+        className=""
         component="section"
         sx={[
           (theme) => ({
@@ -59,7 +58,8 @@ export function EcommerceLandingHero({ sx, ...other }: BoxProps) {
           src={`${CONFIG.assetsDir}/assets/background/texture-2.webp`}
           sx={{ top: 0, right: 0, height: 1, width: 'auto', position: 'absolute' }}
         />
-        <Container sx={{ position: 'relative' }}>
+        <Divider component="section" className="h-2 border-r-8 w-120" />
+        <Container sx={{ position: 'relative', marginTop: '-80px' }}>
           <Carousel carousel={carousel}>
             {_productsCarousel.map((product, index) => (
               <CarouselItem
