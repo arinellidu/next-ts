@@ -222,7 +222,7 @@ export function HomeFAQs({ sx, ...other }: BoxProps) {
                 </Typography>
                 <BlurryBlob
                   className="rounded-xl opacity-45"
-                  firstBlobColor="bg-purple-400"
+                  firstBlobColor="bg-green-400"
                   secondBlobColor="bg-blue-400"
                 ></BlurryBlob>
                 <MarketingContactInfo className="justify-start align-middle ml-10" />
