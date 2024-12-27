@@ -15,6 +15,8 @@ import { Divider } from '@mui/material';
 
 import { CONFIG } from 'src/global-config';
 
+import { m } from 'framer-motion';
+
 // ----------------------------------------------------------------------
 
 const COLORS = ['primary', 'secondary', 'warning', 'success'] as const;
@@ -59,19 +61,22 @@ export function MarketingServicesHowItWork({ sx, ...other }: BoxProps) {
         ]}
         {...other}
       >
-        <Typography
-          marginTop={'180px'}
-          paddingBottom={'-80px'}
-          fontSize={'182px'}
-          fontWeight={'900'}
-          sx={{
-            textAlign: 'center',
-            mixBlendMode: 'soft-light',
-            color: 'InfoBackground',
-          }}
-        >
-          FRADEMA
-        </Typography>
+        <m.div>
+          <Typography
+            marginTop={'250px'}
+            paddingBottom={''}
+            fontSize={'182px'}
+            fontWeight={'900'}
+            sx={{
+              textAlign: 'center',
+              mixBlendMode: 'soft-light',
+              color: 'InfoBackground',
+            }}
+          >
+            FRADEMA
+          </Typography>
+        </m.div>
+
         <Box
           component="section"
           sx={[
