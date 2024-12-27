@@ -224,7 +224,7 @@ export function HomeFAQs({ sx, ...other }: BoxProps) {
                   className="rounded-xl opacity-45"
                   firstBlobColor="bg-green-400"
                   secondBlobColor="bg-blue-400"
-                ></BlurryBlob>
+                />
                 <MarketingContactInfo className="justify-start align-middle ml-10" />
                 {/* <Button
                   size="large"

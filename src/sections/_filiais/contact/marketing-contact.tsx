@@ -147,7 +147,7 @@ export function MarketingContact() {
                   </div>
                   <Select>
                     <SelectTrigger id="referral" name="referral">
-                      <SelectValue placeholder="Select" />
+                      <SelectValue placeholder="Selecione" />
                     </SelectTrigger>
                     <SelectContent>
                       <SelectItem value="search">Web</SelectItem>
@@ -160,10 +160,10 @@ export function MarketingContact() {
                 <div className="flex w-full flex-col justify-end space-y-3 pt-2">
                   <Button type="submit">Enviar formulário</Button>
                   <div className="text-xs text-muted-foreground">
-                    For more information about how we handle your personal information, please visit
-                    our{' '}
+                    Seus dados serão vistos e armazenados somente pela empresa. Para saber mais,
+                    leia nossa{' '}
                     <a href="#" className="underline">
-                      privacy policy
+                      política de segurança
                     </a>
                     .
                   </div>
