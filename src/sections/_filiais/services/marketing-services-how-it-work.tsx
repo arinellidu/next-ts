@@ -84,14 +84,14 @@ export function MarketingServicesHowItWork({ sx, ...other }: BoxProps) {
               }),
               color: 'common.white',
               py: { xs: 30, md: 35 },
-              marginTop: '-182px',
+              marginTop: '-142px',
             }),
             ...(Array.isArray(sx) ? sx : [sx]),
           ]}
           {...other}
         >
           <Container>
-            <Typography
+            {/* <Typography
               sx={{
                 mt: 1,
                 mx: 'auto',
@@ -101,7 +101,9 @@ export function MarketingServicesHowItWork({ sx, ...other }: BoxProps) {
                 textAlign: 'center',
                 mb: { xs: 5, md: 10 },
               }}
-            ></Typography>
+            >
+              teste
+            </Typography> */}
 
             {/* <Timeline position="alternate">
             {TIMELINES.map((value, index) => (
