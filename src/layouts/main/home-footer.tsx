@@ -28,7 +28,6 @@ export function HomeFooter({ sx, ...other }: BoxProps) {
             © All rights reserved.
           </Box>
           <Logo isSingle sx={{ mb: 4, justifyContent: 'center', alignContent: 'center' }} />
-          <MarketingContactInfo className="justify-start ml-10" />
         </Container>
       </Box>
     </>

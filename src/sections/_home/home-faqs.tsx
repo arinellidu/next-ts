@@ -19,6 +19,9 @@ import { TrianglePattern } from 'src/assets/illustrations/components/shape-patte
 import { Iconify } from 'src/components/iconify';
 import { varFade, MotionViewport } from 'src/components/animate';
 
+import BlurryBlob from 'src/components/animata/background/blurry-blob';
+import { MarketingContactInfo } from '../_filiais/contact/marketing-contact-info';
+
 // ----------------------------------------------------------------------
 
 const FAQs = [
@@ -206,20 +209,24 @@ export function HomeFAQs({ sx, ...other }: BoxProps) {
                 border: `dashed 1px ${theme.vars.palette.divider}`,
               })}
             >
+              <m.div variants={variants}></m.div>
+
               <m.div variants={variants}>
                 <Typography component="h6" variant="h3">
                   Tem mais dúvidas?
                 </Typography>
               </m.div>
-
-              <m.div variants={variants}>
+              <m.div>
                 <Typography sx={{ color: 'text.secondary' }}>
                   Entre em contato com um de nossos especialistas!
                 </Typography>
-              </m.div>
-
-              <m.div variants={variants}>
-                <Button
+                <BlurryBlob
+                  className="rounded-xl opacity-45"
+                  firstBlobColor="bg-purple-400"
+                  secondBlobColor="bg-blue-400"
+                ></BlurryBlob>
+                <MarketingContactInfo className="justify-start align-middle ml-10" />
+                {/* <Button
                   size="large"
                   color="info"
                   variant="contained"
@@ -227,11 +234,10 @@ export function HomeFAQs({ sx, ...other }: BoxProps) {
                 >
                   Email
                 </Button>
-              </m.div>
-              <m.div>
+                <m.div variants={variants}></m.div>
                 <Button size="large" color="info" variant="contained" href="#">
                   WhatsApp
-                </Button>
+                </Button> */}
               </m.div>
             </Box>
           </Grid>
