@@ -35,96 +35,100 @@ export function EcommerceLandingHero({ sx, ...other }: BoxProps) {
   const carousel = useCarousel({ loop: true, duration: 80 }, [Autoplay({ delay: 5000 }), Fade()]);
 
   return (
-    <>
-      <Box
-        className="h-1000 w-200"
-        component="section"
-        sx={[
-          (theme) => ({
-            ...theme.mixins.bgGradient({
-              images: [
-                `radial-gradient(50% 160% at 50% 50%, ${varAlpha(theme.vars.palette.common.blackChannel, 0.75)}, ${theme.vars.palette.common.black})`,
-                // `url(${CONFIG.assetsDir}/assets/background/derek.jpg)`,
-              ],
-            }),
-            overflow: 'hidden',
-            position: 'relative',
+    <Box
+      className="h-700 w-200"
+      component="section"
+      sx={[
+        (theme) => ({
+          ...theme.mixins.bgGradient({
+            images: [
+              `radial-gradient(50% 160% at 50% 50%, ${varAlpha(theme.vars.palette.common.blackChannel, 0.75)}, ${theme.vars.palette.common.black})`,
+              // `url(${CONFIG.assetsDir}/assets/background/derek.jpg)`,
+            ],
           }),
-          ...(Array.isArray(sx) ? sx : [sx]),
-        ]}
-        {...other}
+          overflow: 'hidden',
+          position: 'relative',
+        }),
+        ...(Array.isArray(sx) ? sx : [sx]),
+      ]}
+      {...other}
+    >
+      <Divider component="section" className="h-2 border-r-8 w-120" />
+      <Box
+        component="img"
+        alt="Texture"
+        src={`${CONFIG.assetsDir}/assets/background/texture-2.webp`}
+        sx={{ top: 0, right: 0, height: 2, width: 'auto', position: 'absolute' }}
+      />
+
+      {/* <Container className="h-400" sx={{ position: 'relative', marginTop: '-80px' }}> */}
+      <Box
+        sx={{
+          display: 'flex',
+          alignItems: 'center',
+          justifyContent: 'space-between',
+          transform: 'translateY(-64px)',
+        }}
       >
-        <Divider component="section" className="h-2 border-r-8 w-120" />
-        <Box
-          component="img"
-          alt="Texture"
-          src={`${CONFIG.assetsDir}/assets/background/texture-2.webp`}
-          sx={{ top: 0, right: 0, height: 1, width: 'auto', position: 'absolute' }}
+        <CarouselDotButtons
+          variant="rounded"
+          scrollSnaps={carousel.dots.scrollSnaps}
+          selectedIndex={carousel.dots.selectedIndex}
+          onClickDot={carousel.dots.onClickDot}
+          sx={{ color: 'info.main' }}
         />
 
-        <Container className="h-400" sx={{ position: 'relative', marginTop: '-80px' }}>
-          <GlareCard className="flex flex-col items-center justify-center w-400 h-320">
-            <Box
-              sx={{
-                display: 'flex',
-                alignItems: 'center',
-                justifyContent: 'space-between',
-                transform: 'translateY(-64px)',
-              }}
-            >
-              {/* <CarouselDotButtons
-              variant="rounded"
-              scrollSnaps={carousel.dots.scrollSnaps}
-              selectedIndex={carousel.dots.selectedIndex}
-              onClickDot={carousel.dots.onClickDot}
-              sx={{ color: 'info.main' }}
-            /> */}
-              <Carousel carousel={carousel}>
-                {_productsCarousel.map((product, index) => (
-                  <CarouselItem
-                    key={product.id}
-                    product={product}
-                    selected={carousel.dots.selectedIndex === index}
-                  />
-                ))}
-              </Carousel>
+        <Carousel className="h-full w-full absolute inset-0 object-cover" carousel={carousel}>
+          {_productsCarousel.map((product, index) => (
+            <CarouselItem
+              key={product.id}
+              product={product}
+              selected={carousel.dots.selectedIndex === index}
+            />
+          ))}
+        </Carousel>
 
-              <CarouselArrowBasicButtons
-                {...carousel.arrows}
-                options={carousel.options}
-                slotProps={{
-                  prevBtn: {
-                    svgIcon: (
-                      <path
-                        fill="none"
-                        stroke="currentColor"
-                        strokeLinecap="round"
-                        strokeLinejoin="round"
-                        strokeWidth="2"
-                        d="m15 5l-6 7l6 7"
-                      />
-                    ),
-                  },
-                  nextBtn: {
-                    svgIcon: (
-                      <path
-                        fill="none"
-                        stroke="currentColor"
-                        strokeLinecap="round"
-                        strokeLinejoin="round"
-                        strokeWidth="2"
-                        d="m9 5l6 7l-6 7"
-                      />
-                    ),
-                  },
-                }}
-                sx={{ gap: 1, color: 'info.main' }}
-              />
-            </Box>
-          </GlareCard>
-        </Container>
+        <CarouselArrowBasicButtons
+          {...carousel.arrows}
+          options={carousel.options}
+          slotProps={{
+            prevBtn: {
+              svgIcon: (
+                <path
+                  fill="none"
+                  stroke="currentColor"
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                  strokeWidth="2"
+                  d="m15 5l-6 7l6 7"
+                />
+              ),
+            },
+            nextBtn: {
+              svgIcon: (
+                <path
+                  fill="none"
+                  stroke="currentColor"
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                  strokeWidth="2"
+                  d="m9 5l6 7l-6 7"
+                />
+              ),
+            },
+          }}
+          sx={{ gap: 1, color: 'info.main' }}
+        />
       </Box>
-    </>
+      {/* </Container> */}
+      <GlareCard className="flex flex-col items-start justify-end py-8 px-6">
+        <p className="font-bold text-white text-lg">The greatest trick</p>
+        <p className="font-normal text-base text-neutral-200 mt-4">
+          The greatest trick the devil ever pulled was to convince the world that he didn&apos;t
+          exist.
+        </p>
+      </GlareCard>
+    </Box>
   );
 }
 
